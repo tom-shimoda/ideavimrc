@@ -1,0 +1,100 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" undoの挙動がおかしいのが治るらしい (https://youtrack.jetbrains.com/issue/VIM-308)
+set nooldundo
+
+" Normalモード時に自動的に半角英数に切り替える
+set keep-english-in-normal
+
+" Easy motion
+let mapleader=","
+set easymotion
+map <Leader><Leader> <Plug>(easymotion-s)
+
+" NERDTree
+set NERDTree
+nnoremap <f2> :NERDTreeFind<cr>
+
+" 行を結合したときにいい感じにまとめてくれる
+set ideajoin
+
+set surround
+
+
+" yank内容をクリップボードへ
+set clipboard=unnamed
+"検索時大文字小文字を区別しない
+set ignorecase
+"検索文字列に大文字が含まれる場合は区別する
+set smartcase
+
+"space割り当て解除 (誤爆を防ぐため)
+nnoremap <Space> <Nop>
+
+"3行飛び上下移動
+noremap <S-j> jjj
+noremap <S-k> jjj
+noremap <C-j> kkk
+noremap <C-k> kkk
+
+" Tab移動
+nnoremap <S-h> :action PreviousTab<cr>
+nnoremap <S-l> :action NextTab<cr>
+
+"行頭文字に移動
+noremap <Space>h ^
+"行末移動
+noremap <Space>l $
+
+"カーソル下のシンボルをコピー
+nnoremap <Space>y wbvey
+"カーソル下のシンボルをカット
+nnoremap <Space>c wbvec
+"行の連結
+noremap <Space>j gJ
+
+"現在のファイルをエクスプローラーで開く
+nnoremap <F12> :action RevealIn<cr>
+
+"フォーマットをそろえる
+noremap == :action ReformatCode<cr>
+
+"参照先一覧表示
+nnoremap gr :action ShowUsages<cr>
+nnoremap ghh :action QuickJavaDoc<cr>
+nnoremap ghj :action QuickImplementations<cr>
+
+"現在のバッファを閉じる
+nnoremap <leader>x :close<cr>
+
+"コメントアウト
+noremap <C-/> :action CommentByLineComment<cr>
+
+"カーソル下のシンボルをリネーム
+nnoremap <Space>r :action RenameElement<cr>

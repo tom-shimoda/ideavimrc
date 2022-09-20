@@ -99,5 +99,10 @@ noremap <C-/> :action CommentByLineComment<cr>
 "カーソル下のシンボルをリネーム
 nnoremap <Space>r :action RenameElement<cr>
 
-"アクションの表示
-nnoremap <Space><Enter> :action ShowIntentionActions<cr>
+"次のコンパイルエラーへ
+nnoremap gan :action GotoNextError<cr>
+
+"次の変更箇所へ
+nnoremap ghn :action VcsShowNextChangeMarker<cr>
+"前の変更箇所へ
+nnoremap ghb :action VcsShowPrevChangeMarker<cr>

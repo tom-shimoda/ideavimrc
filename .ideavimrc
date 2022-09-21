@@ -29,9 +29,6 @@ map Q gq
 " undoの挙動がおかしいのが治るらしい (https://youtrack.jetbrains.com/issue/VIM-308)
 set nooldundo
 
-" Normalモード時に自動的に半角英数に切り替える
-set keep-english-in-normal
-
 " Easy motion
 let mapleader=","
 set easymotion
@@ -56,6 +53,9 @@ set smartcase
 
 "space割り当て解除 (誤爆を防ぐため)
 nnoremap <Space> <Nop>
+
+"Reload vimrc
+nnoremap <Space>g :source ~/.ideavimrc<cr>
 
 "3行飛び上下移動
 noremap <S-j> jjj
@@ -106,3 +106,7 @@ nnoremap gan :action GotoNextError<cr>
 nnoremap ghn :action VcsShowNextChangeMarker<cr>
 "前の変更箇所へ
 nnoremap ghb :action VcsShowPrevChangeMarker<cr>
+
+"ファイルを検索
+nnoremap <C-p> :action VcsShowPrevChangeMarker<cr>
+

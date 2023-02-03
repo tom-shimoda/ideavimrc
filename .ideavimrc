@@ -29,7 +29,7 @@ map Q gq
 " undoの挙動がおかしいのが治るらしい (https://youtrack.jetbrains.com/issue/VIM-308)
 set nooldundo
 
-" Easy motion
+" Easy motion (※なぜかspace+gでvimrc読み込みなおさないと使用できない)
 let mapleader=","
 set easymotion
 map <Leader><Leader> <Plug>(easymotion-s)
@@ -114,3 +114,9 @@ nnoremap ghb :action VcsShowPrevChangeMarker<cr>
 "ファイルを検索
 nnoremap <C-p> :action VcsShowPrevChangeMarker<cr>
 
+" ブックマークをOn/Off
+nnoremap gbm :action ToggleBookmark<cr>
+" 次のブックマークへ
+nnoremap gbn :action GotoNextBookmark<cr>
+" 前のブックマークへ
+nnoremap gbb :action GotoPreviousBookmark<cr>

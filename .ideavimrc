@@ -43,11 +43,6 @@ set ideajoin
 
 set surround
 
-
-" ビープ音無効
-set visualbell
-set noerrorbells
-
 " yank内容をクリップボードへ
 set clipboard=unnamed
 "検索時大文字小文字を区別しない
@@ -91,6 +86,7 @@ noremap == :action ReformatCode<cr>
 
 "参照先一覧表示
 nnoremap gr :action ShowUsages<cr>
+nnoremap gR :action FindUsages<cr>
 nnoremap ghh :action QuickJavaDoc<cr>
 nnoremap ghj :action QuickImplementations<cr>
 
@@ -120,3 +116,4 @@ nnoremap gbm :action ToggleBookmark<cr>
 nnoremap gbn :action GotoNextBookmark<cr>
 " 前のブックマークへ
 nnoremap gbb :action GotoPreviousBookmark<cr>
+

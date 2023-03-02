@@ -106,6 +106,8 @@ nnoremap gan :action GotoNextError<cr>
 nnoremap ghn :action VcsShowNextChangeMarker<cr>
 "前の変更箇所へ
 nnoremap ghb :action VcsShowPrevChangeMarker<cr>
+"変更破棄
+nnoremap ghu :action Vcs.RollbackChangedLines<cr>
 
 "ファイルを検索
 nnoremap <C-p> :action VcsShowPrevChangeMarker<cr>

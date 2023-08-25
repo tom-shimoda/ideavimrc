@@ -78,6 +78,9 @@ nnoremap <Space>c wbvec
 "行の連結
 noremap <Space>j gJ
 
+"yankしたものをpaste (上書きpasteした際にレジスタが置き換わってしまうのを回避)
+noremap p "0p
+
 "現在のファイルをエクスプローラーで開く
 nnoremap <F12> :action RevealIn<cr>
 

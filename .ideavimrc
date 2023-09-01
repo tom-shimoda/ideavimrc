@@ -1,3 +1,5 @@
+set visualbell
+
 "" Source your .vimrc
 "source ~/.vimrc
 
@@ -30,7 +32,7 @@ map Q gq
 set nooldundo
 
 " Easy motion (※なぜかspace+gでvimrc読み込みなおさないと使用できない)
-let mapleader=","
+let mapleader="," "デフォルトショートカット: Ctrl + ;
 set easymotion
 map <Leader><Leader> <Plug>(easymotion-s)
 
@@ -71,10 +73,21 @@ noremap <Space>h ^
 "行末移動
 noremap <Space>l $
 
+"削除系アクション実行時にコピーレジスタに入れるように変更
+vnoremap c "0c
+vnoremap x "0x
+vnoremap d "0d
+vnoremap D "0D
+nnoremap di( "0di(
+nnoremap di[ "0di[
+nnoremap di{ "0di{
+nnoremap di' "0di'
+nnoremap di" "0di"
+
 "カーソル下のシンボルをコピー
 nnoremap <Space>y wbvey
 "カーソル下のシンボルをカット
-nnoremap <Space>c wbvec
+nnoremap <Space>c wbveywbvec
 "カーソル下のシンボルにペースト
 nnoremap <Space>p wbve"0p
 "行の連結
@@ -123,4 +136,5 @@ nnoremap gbm :action ToggleBookmark<cr>
 nnoremap gbn :action GotoNextBookmark<cr>
 " 前のブックマークへ
 nnoremap gbb :action GotoPreviousBookmark<cr>
-
+" ヘッダー/ソース 切り替え
+nnoremap <D-o> :action CIDR.Lang.SwitchHeaderSource<cr>

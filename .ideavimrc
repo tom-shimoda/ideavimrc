@@ -97,6 +97,7 @@ noremap <Space>j gJ
 
 "yankしたものをpaste (範囲選択ペースト時のみ、上書きpasteによるレジスタ置き換えを回避)
 noremap p "0p
+noremap P "0P
 
 "現在のファイルをエクスプローラーで開く
 nnoremap <F12> :action RevealIn<cr>

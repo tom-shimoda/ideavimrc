@@ -1,4 +1,5 @@
 set visualbell
+set noerrorbells
 
 "" Source your .vimrc
 "source ~/.vimrc

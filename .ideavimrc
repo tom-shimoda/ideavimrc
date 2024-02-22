@@ -46,6 +46,14 @@ set ideajoin
 
 set surround
 
+" マルチカーソル
+" Alt+n: 単語選択。押すたびに次の単語へ
+" Alt+p: 単語選択解除。１つ前の単語へ
+" Alt+x: 最後に選択した単語のみ選択解除
+" c: 編集モードへ
+" (https://qiita.com/martini3oz/items/15442b5c574a726cd3bf)
+set multiple-cursors
+
 " yank内容をクリップボードへ
 set clipboard=unnamed
 "検索時大文字小文字を区別しない

@@ -47,6 +47,7 @@ set ideajoin
 set surround
 
 " マルチカーソル
+" ctrl+ctrl+up/down: マルチカーソルモードへ (InteliJ標準機能: https://pleiades.io/help/idea/multicursor.html)
 " Alt+n: 単語選択。押すたびに次の単語へ
 " Alt+p: 単語選択解除。１つ前の単語へ
 " Alt+x: 最後に選択した単語のみ選択解除

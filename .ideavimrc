@@ -32,10 +32,11 @@ map Q gq
 " undoの挙動がおかしいのが治るらしい (https://youtrack.jetbrains.com/issue/VIM-308)
 set nooldundo
 
+" 機能しなくなったのでCO -- 2024/4/22
 " Easy motion (※なぜかspace+gでvimrc読み込みなおさないと使用できない)
-let mapleader="," "デフォルトショートカット: Ctrl + ;
-set easymotion
-map <Leader><Leader> <Plug>(easymotion-s)
+" let mapleader="," "デフォルトショートカット: Ctrl + ;
+" set easymotion
+" map <Leader><Leader> <Plug>(easymotion-s)
 
 " NERDTree
 set NERDTree

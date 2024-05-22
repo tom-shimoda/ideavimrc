@@ -97,6 +97,9 @@ nnoremap di" "0di"
 nnoremap D "0D
 nnoremap dd "0dd
 
+"カーソル下のシンボルを大文字に
+nnoremap <Space>u wbveU
+
 "カーソル下のシンボルをコピー
 nnoremap <Space>y wbvey
 "カーソル下のシンボルをカット

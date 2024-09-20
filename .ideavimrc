@@ -155,3 +155,10 @@ nnoremap gbn :action GotoNextBookmark<cr>
 nnoremap gbb :action GotoPreviousBookmark<cr>
 " ヘッダー/ソース 切り替え
 nnoremap <D-o> :action CIDR.Lang.SwitchHeaderSource<cr>
+
+" [TabMover plugin](https://plugins.jetbrains.com/plugin/10131-tabmover)
+" 現在のタブを右へ
+nnoremap <C-S-l> :action com.mnw.tabmover.actions.MoveTabDownAction<cr>
+" 現在のタブを左へ [TabMover plugin](https://plugins.jetbrains.com/plugin/10131-tabmover)
+nnoremap <C-S-h> :action com.mnw.tabmover.actions.MoveTabUpAction<cr>
+

@@ -184,6 +184,7 @@ nmap <Space>< ysiw>
 nmap <Space>" ysiw"
 nmap <Space>' ysiw'
 nmap <Space>` ysiw`
+nmap <Space>t ysiwt
 
 " 選択範囲を囲む
 vmap <Space>{ S}
@@ -193,6 +194,7 @@ vmap <Space>< S>
 vmap <Space>" S"
 vmap <Space>' S'
 vmap <Space>` S`
+vmap <Space>t St
 
 " 次の空白で改行する
 nnoremap <Space><Enter> f<Space>a<Enter><ESC>w

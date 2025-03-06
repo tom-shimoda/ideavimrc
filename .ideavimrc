@@ -1,5 +1,6 @@
 set visualbell
 set noerrorbells
+set surround
 
 "" Source your .vimrc
 "source ~/.vimrc
@@ -89,13 +90,16 @@ vnoremap c "0c
 vnoremap x "0x
 vnoremap d "0d
 vnoremap D "0D
+nnoremap D "0D
+nnoremap dd "0dd
+
+" デフォルトの ci", ci{ 等で同等のことができる(insertモードになる)
 nnoremap di( "0di(
 nnoremap di[ "0di[
 nnoremap di{ "0di{
 nnoremap di' "0di'
 nnoremap di" "0di"
-nnoremap D "0D
-nnoremap dd "0dd
+nnoremap dit "0dit
 
 "カーソル下のシンボルを大文字に
 nnoremap <Space>u wbveUe
@@ -153,7 +157,7 @@ nnoremap gbm :action ToggleBookmark<cr>
 nnoremap gbn :action GotoNextBookmark<cr>
 " 前のブックマークへ
 nnoremap gbb :action GotoPreviousBookmark<cr>
-" ヘッダー/ソース 切り替え
+" ヘッダー/ソース 切り替え <D->はcommandキー
 nnoremap <D-o> :action CIDR.Lang.SwitchHeaderSource<cr>
 
 " [TabMover plugin](https://plugins.jetbrains.com/plugin/10131-tabmover)
@@ -162,3 +166,35 @@ nnoremap <C-S-l> :action com.mnw.tabmover.actions.MoveTabDownAction<cr>
 " 現在のタブを左へ [TabMover plugin](https://plugins.jetbrains.com/plugin/10131-tabmover)
 nnoremap <C-S-h> :action com.mnw.tabmover.actions.MoveTabUpAction<cr>
 
+" カーソル行の移動 (mac: Option)
+noremap <A-k> :action MoveLineUp<cr>
+noremap <A-j> :action MoveLineDown<cr>
+
+" 選択範囲の拡大縮小 <D->はcommandキー
+noremap <D-]> :action EditorSelectWord<cr>
+noremap <D-[> :action EditorUnSelectWord<cr>
+
+" カーソル下の単語を囲む
+" 囲みを消す場合は、ds{, ds( 等。
+" 囲みを変更する場合はcs系。cs{) or cs}) で{hoge}→(hoge)となる。cs{( とした場合は空白が入る
+nmap <Space>{ ysiw}
+nmap <Space>( ysiw)
+nmap <Space>[ ysiw]
+nmap <Space>< ysiw>
+nmap <Space>" ysiw"
+nmap <Space>' ysiw'
+nmap <Space>` ysiw`
+
+" 選択範囲を囲む
+vmap <Space>{ S}
+vmap <Space>( S)
+vmap <Space>[ S]
+vmap <Space>< S>
+vmap <Space>" S"
+vmap <Space>' S'
+vmap <Space>` S`
+
+" 次の空白で改行する
+nnoremap <Space><Enter> f<Space>a<Enter><ESC>w
+" 次の,で改行する
+nnoremap <Space>,<Enter> f,a<Enter><ESC>w
